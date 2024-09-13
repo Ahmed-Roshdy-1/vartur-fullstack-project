@@ -4,19 +4,59 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 
 ## Setup
 
-Make sure to install the dependencies:
+open terminal and Clone the Repo
 
 ```bash
+git clone https://github.com/Ahmed-Roshdy-1/vartur-fullstack-project.git
+
+```
+
+and navigate to project file
+
+```bash
+cd vartur-fullstack-project
+
+```
+
+Make sure to install the dependencies
+
 # npm
+
+```bash
 npm install
 ```
 
-Set environment variable in .env file
+and inside project froder Create a .env File
+add environment variable in .env file
 
 ```bash
 DATABASE_URL = "mysql://USER:PASSWORD@HOST:PORT/DATABASE"
 ```
 
+create database and put the url link like this
+for exaple :
+
+```bash
+DATABASE_URL = "mysql://root:PassWord231@localhost:3306/DBName"
+```
+
+add run prisma migation to create the database schema
+
+```bash
+npm run migrate
+```
+
+and finaly run the project
+
+```bash
+npm run dev
+```
+
+### Demo Video
+
+<video src="assets/demo.mp4" controls="controls" style="max-width: 100%; height: auto;">
+   Your browser does not support the video tag.
+</video>
 ## Development Server
 
 Start the development server on `http://localhost:3000`:

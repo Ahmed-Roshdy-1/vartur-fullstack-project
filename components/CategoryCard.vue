@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative shadowCard overflow-hidden min-w-[300px] max-w-[300px] min-h-[350px] pb-6 rounded-lg flex flex-col justify-between items-center bg-gradient-to-t from-red-300/10 via-red-500/70 to-red-300 bg-opacity-10 bg-blend-lighten"
+    class="relative shadowCard overflow-hidden min-w-[300px] max-w-[300px] min-h-[350px] pb-6 rounded-lg flex flex-col justify-between items-center bg-gradient-to-t from-red-100/5 via-red-500/50 to-red-500/5 bg-opacity-10 bg-blend-lighten"
   >
     <template v-if="!showForm">
       <span class="flex w-full flex-col gap-4 items-center">
@@ -15,7 +15,7 @@
           {{ props.data.name }}
         </p>
       </span>
-      <span class="flex justify-around w-full">
+      <span class="flex justify-around w-full mt-4">
         <button class="btn" @click="UpdateFun(props.data.id)">
           <Pencil width="18" /> Update
         </button>

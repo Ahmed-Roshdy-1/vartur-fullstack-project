@@ -3,10 +3,11 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 export default defineEventHandler(async (event)=>{
   const body = await readBody(event);
-  const allproducts = await prisma.categories.create({
+  const allproducts = await prisma.products.update({
+    where:{id:body.id},
     data: {
       name: body.name,
-      parent_id:body.parent_id,
+      category_id: body.category_id,
       picture: body.picture,
     },
   });

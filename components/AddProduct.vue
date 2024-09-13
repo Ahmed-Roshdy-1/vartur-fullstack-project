@@ -31,7 +31,7 @@
           class="appearance-none block w-full bg-transparent text-white border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-transparent focus:border-red-500"
           v-model="img"
           type="text"
-          placeholder=" Image URL or Directory"
+          placeholder="Add Image URL"
           required
         />
       </div>

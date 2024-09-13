@@ -1,11 +1,11 @@
 <template>
   <form
     action="submit"
-    @submit.prevent="AddCategorieFun"
-    class="w-full max-w-lg bg-[#08090a] border py-8 px-12 border-red-500 rounded-xl"
+    @submit.prevent="updateProductFun"
+    class="min-w-[300px] max-w-[300px] min-h-[350px] bg-[#08090a] border py-4 px-12 border-red-500 rounded-lg"
   >
-    <div class="flex flex-col -mx-3 mb-6">
-      <div class="w-full px-3 mb-6 md:mb-0">
+    <div class="flex flex-col -mx-3 mb-2">
+      <div class="w-full px-3 mb-2 md:mb-0">
         <label
           class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
           for="grid-first-name"
@@ -31,13 +31,13 @@
           class="appearance-none block w-full bg-transparent text-white border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-transparent focus:border-red-500"
           v-model="img"
           type="text"
-          placeholder=" Image URL"
+          placeholder=" Image URL or Directory"
           required
         />
       </div>
     </div>
     <div class="flex -mx-3 mb-2">
-      <div class="w-full px-3 mb-6 md:mb-0">
+      <div class="w-full px-3 mb-2 md:mb-0">
         <label
           class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
           for="grid-state"
@@ -77,9 +77,11 @@
         </div>
       </div>
     </div>
-    <div class="flex justify-center -mx-3 mt-10">
-      <div class="w-full px-6 mb-6 md:mb-0">
-        <button class="btn w-full" type="submit"><Plus width="18" />Add</button>
+    <div class="flex justify-center -mx-3 mt-4">
+      <div class="w-full px-6 mb-2 md:mb-0">
+        <button class="btn w-full" type="submit">
+          <Edit width="18" />Update
+        </button>
       </div>
     </div>
   </form>
@@ -87,20 +89,20 @@
 
 <script setup>
 import { ref } from "vue";
-import { Plus } from "lucide-vue-next";
+import { Edit } from "lucide-vue-next";
 const allData = ref(null);
-const name = ref("");
-const img = ref("");
-const SelectValue = ref(null);
+const props = defineProps(["data"]);
+const name = ref(props.data.name);
+const img = ref(props.data.picture);
+const SelectValue = ref(props.data.category_id);
 const emit = defineEmits(["update"]);
-const AddCategorieFun = async () => {
-  console.log("SelectValue.value", SelectValue.value);
-
-  const { data, error } = await useFetch("/api/addCategorie", {
+const updateProductFun = async () => {
+  const { data, error } = await useFetch("/api/updateProduct", {
     method: "POST",
     body: {
+      id: props.data.id,
       name: name.value,
-      parent_id: SelectValue.value,
+      category_id: SelectValue.value,
       picture: img.value,
     },
   });
@@ -122,6 +124,7 @@ const getCategoriesFun = async () => {
   } else {
     console.log("User added:", data.value);
     allData.value = data.value;
+    // SelectValue.value = props.data.parent_id;
   }
 };
 getCategoriesFun();

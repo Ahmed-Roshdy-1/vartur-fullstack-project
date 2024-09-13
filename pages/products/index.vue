@@ -4,7 +4,7 @@
     class="Scroll relative flex flex-col items-center gap-8 bg-[#08090a] w-full h-screen overflow-y-scroll py-24 px-10"
   >
     <button class="btn" @click.stop="showForm = true">
-      <Plus width="18" />Add Categories
+      <Plus width="18" />Add Product
     </button>
     <div
       v-if="allData"
