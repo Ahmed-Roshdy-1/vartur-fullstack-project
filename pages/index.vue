@@ -36,23 +36,6 @@ function unshowFormFun() {
   if (showForm.value) showForm.value = false;
 }
 
-const addUser = async () => {
-  const { data, error } = await useFetch("/api/products", {
-    method: "POST",
-    body: {
-      name: "ahmed32",
-      picture: "https://m.media-amazon.com/images/I/31aDWE4msZL.jpg",
-      // category_id: "22ddsd3",
-    },
-  });
-  console.log("User added:", data);
-  if (error.value) {
-    console.error("error", error);
-  } else {
-    console.log("User added:", data.value);
-  }
-};
-
 const getCategoriesFun = async () => {
   const { data, error } = await useFetch("/api/getCategories");
   console.log("getCategoriesFun");
@@ -64,9 +47,6 @@ const getCategoriesFun = async () => {
   }
 };
 getCategoriesFun();
-
-// addUser();
-// AddCategorieFun();
 </script>
 <style scoped>
 /* Track (background) */
