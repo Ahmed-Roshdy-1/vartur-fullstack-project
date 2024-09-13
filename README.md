@@ -53,11 +53,7 @@ npm run dev
 ```
 
 ### Demo Video
-
-<video controls>
-  <source src="assets/demo.mp4" type="video/mp4">
-  Your browser does not support HTML5 video.  <a href="https://browsehappy.com/" target="_blank">Please upgrade your browser</a>
-</video>
+https://github.com/Ahmed-Roshdy-1/vartur-fullstack-project/raw/refs/heads/main/assets/demo.mp4
 ## Development Server
 
 Start the development server on `http://localhost:3000`:
