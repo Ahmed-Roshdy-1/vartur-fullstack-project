@@ -54,7 +54,9 @@ npm run dev
 
 ### Demo Video
 
-<video src="assets/demo.mp4" controls="controls" style="max-width: 100%; height: auto;">
+[](assets/demo.mp4)
+
+<video src="assets/demo.mp4" controls="controls"      style="max-width: 100%; height: auto;">
    Your browser does not support the video tag.
 </video>
 ## Development Server
