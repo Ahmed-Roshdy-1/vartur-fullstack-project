@@ -54,10 +54,9 @@ npm run dev
 
 ### Demo Video
 
-[](/assets/demo.mp4)
-
-<video src="/assets/demo.mp4" controls="controls"      style="max-width: 100%; height: auto;">
-   Your browser does not support the video tag.
+<video controls>
+  <source src="assets/demo.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.  <a href="https://browsehappy.com/" target="_blank">Please upgrade your browser</a>
 </video>
 ## Development Server
 
