@@ -18,6 +18,13 @@ cd vartur-fullstack-project
 
 ```
 
+create database and put the url link  
+add DATABASE_URL in deploy.sh file like
+
+```bash
+export DATABASE_URL = "mysql://USER:PASSWORD@HOST:PORT/DATABASE"
+```
+
 ## to run Shell script to deploy and run website
 
 ```bash

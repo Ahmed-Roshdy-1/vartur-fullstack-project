@@ -1,11 +1,9 @@
 #!/bin/bash
 
 # Define environment variables (update these as needed)
-NODE_ENV=production
-DATABASE_URL="mysql://root:P@ssW0rd231@localhost:3306/DBName"
+export NODE_ENV=production
+export DATABASE_URL="mysql://root:P@ssW0rd231@localhost:3306/DBName"
 
-# Navigate to the project directory
-cd /path/to/your/nuxt/project
 
 # Install project dependencies
 echo "Installing dependencies..."
