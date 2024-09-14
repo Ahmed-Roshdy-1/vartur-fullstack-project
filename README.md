@@ -4,6 +4,14 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 
 ## Setup
 
+# to run Shell script to deploy and run website
+
+```bash
+./deploy.sh
+```
+
+# or
+
 open terminal and Clone the Repo
 
 ```bash
@@ -53,7 +61,9 @@ npm run dev
 ```
 
 ### Demo Video
+
 https://github.com/Ahmed-Roshdy-1/vartur-fullstack-project/raw/refs/heads/main/assets/demo.mp4
+
 ## Development Server
 
 Start the development server on `http://localhost:3000`:
