@@ -4,14 +4,6 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 
 ## Setup
 
-# to run Shell script to deploy and run website
-
-```bash
-./deploy.sh
-```
-
-# or
-
 open terminal and Clone the Repo
 
 ```bash
@@ -25,6 +17,14 @@ and navigate to project file
 cd vartur-fullstack-project
 
 ```
+
+## to run Shell script to deploy and run website
+
+```bash
+./deploy.sh
+```
+
+# or
 
 Make sure to install the dependencies
 
