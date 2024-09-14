@@ -8,7 +8,9 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "migrate":"npx prisma migrate dev --name init"
+    "migrate":"npx prisma migrate dev --name init",
+    "prepare": "prisma generate"
+
   },
   "dependencies": {
     "@prisma/client": "^5.19.1",
