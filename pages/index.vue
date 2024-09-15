@@ -3,9 +3,19 @@
     @click="unshowFormFun"
     class="Scroll relative flex flex-col items-center gap-8 bg-[#08090a] w-full h-screen overflow-y-scroll py-24 px-10"
   >
-    <button class="btn" @click.stop="showForm = true">
-      <Plus width="18" />Add Categories
-    </button>
+    <span class="flex gap-6">
+      <button class="btn" @click.stop="showForm = true">
+        <Plus width="18" />Add Categories
+      </button>
+      <!-- <button class="btn" @click.stop="showForm = true">
+        <NuxtLink
+          to="/CategoryList"
+          class="flex items-center s justify-center gap-4"
+        >
+          <ListCollapse width="18" /> Category List
+        </NuxtLink>
+      </button> -->
+    </span>
     <div
       v-if="allData"
       class="Scroll place-items-center justify-cente gap-14 grid grid-cols-1 min-[1315px]:grid-cols-4 md:grid-cols-2"
@@ -22,13 +32,14 @@
       @click.stop=""
       class="absolute"
       @update="getCategoriesFun"
+      @close="unshowFormFun"
     />
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
-import { Plus } from "lucide-vue-next";
+import { ListCollapse, Plus } from "lucide-vue-next";
 import CategoryCard from "~/components/CategoryCard.vue";
 const showForm = ref(false);
 const allData = ref(null);

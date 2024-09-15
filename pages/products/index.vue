@@ -22,6 +22,7 @@
       @click.stop=""
       class="absolute"
       @update="getProductsFun"
+      @close="unshowFormFun"
     />
   </div>
 </template>

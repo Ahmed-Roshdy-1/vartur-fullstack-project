@@ -8,10 +8,11 @@
         <li class="">
           <NuxtLink to="/">Categories</NuxtLink>
         </li>
-        <li>
-          <!-- <NuxtLink to="/about">About</NuxtLink> -->
-        </li>
+
         <li><NuxtLink to="/products" class="">Products</NuxtLink></li>
+        <li>
+          <NuxtLink to="/CategoryList"> Category List </NuxtLink>
+        </li>
       </ul>
     </nav>
   </header>

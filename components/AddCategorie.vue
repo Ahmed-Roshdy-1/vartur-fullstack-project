@@ -77,6 +77,11 @@
         </div>
       </div>
     </div>
+    <CircleX
+      width="28"
+      class="absolute z-10 right-4 top-4 cursor-pointer hover:text-red-400"
+      @click="$emit(`close`)"
+    />
     <div class="flex justify-center -mx-3 mt-10">
       <div class="w-full px-6 mb-6 md:mb-0">
         <button class="btn w-full" type="submit"><Plus width="18" />Add</button>
@@ -87,7 +92,7 @@
 
 <script setup>
 import { ref } from "vue";
-import { Plus } from "lucide-vue-next";
+import { CircleX, Plus } from "lucide-vue-next";
 const allData = ref(null);
 const name = ref("");
 const img = ref("");
@@ -110,6 +115,7 @@ const AddCategorieFun = async () => {
     console.error("error", error);
   } else {
     console.log("User added:", data.value);
+    getCategoriesFun();
     emit("update");
   }
 };
@@ -122,6 +128,7 @@ const getCategoriesFun = async () => {
   } else {
     console.log("User added:", data.value);
     allData.value = data.value;
+    console.log(allData.value);
   }
 };
 getCategoriesFun();
