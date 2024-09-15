@@ -15,6 +15,15 @@
           {{ props.data.name }}
         </p>
       </span>
+      <span v-if="categoryArray" class="flex gap-2 mx-2">
+        <p
+          v-for="item in categoryArray"
+          :key="item.id"
+          class="px-2 py-2 rounded-xl"
+        >
+          {{ item.name }}
+        </p>
+      </span>
       <span class="flex justify-around w-full mt-4">
         <button class="btn" @click="UpdateFun(props.data.id)">
           <Pencil width="18" /> Update
@@ -44,7 +53,8 @@ import { CircleX, Pencil, Trash2 } from "lucide-vue-next";
 import { ref } from "vue";
 const showForm = ref(false);
 const props = defineProps(["data"]);
-// console.log(props.data);
+getTest(props.data.category_id);
+const categoryArray = ref(null);
 async function UpdateFun(id) {
   showForm.value = true;
   console.log(id);
@@ -77,5 +87,21 @@ async function deleteFun(id) {
 function handleUpdate() {
   showForm.value = false;
   emit("update");
+}
+
+async function getTest(id) {
+  const { data, error } = await useFetch("/api/getTest", {
+    method: "POST",
+    body: {
+      id: id,
+    },
+  });
+  console.log("User added:", data);
+  if (error.value) {
+    console.error("error", error);
+  } else {
+    console.log("User added:", data.value);
+    categoryArray.value = data.value;
+  }
 }
 </script>
