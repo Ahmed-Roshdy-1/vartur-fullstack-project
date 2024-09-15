@@ -14,5 +14,12 @@ export default defineNuxtConfig({
     },
     
   },
+    
+  //  // Other configurations...
+  //  nitro: {
+  //   routeRules: {
+  //     '/uploads/**': { swr: true }, // Serve files in the uploads directory
+  //   },
+  // },
   
 })

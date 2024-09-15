@@ -37,15 +37,27 @@ const allData = ref(null);
 function unshowFormFun() {
   if (showForm.value) showForm.value = false;
 }
+// const getCategoryRecurivly = async () => {
+//   const { data, error } = await useFetch("/api/getTest");
+//   console.log("getProductsFun");
+//   if (error.value) {
+//     console.error("error", error);
+//   } else {
+//     allData.value = data.value;
+//     console.log(allData.value);
+//   }
+// };
+// getCategoryRecurivly();
 
 const getProductsFun = async () => {
   const { data, error } = await useFetch("/api/getProducts");
-  console.log("getCategoriesFun");
+  console.log("getProductsFun");
   if (error.value) {
     console.error("error", error);
   } else {
     console.log("User added:", data.value);
     allData.value = data.value;
+    console.log(allData.value);
   }
 };
 getProductsFun();
