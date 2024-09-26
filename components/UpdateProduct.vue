@@ -1,7 +1,7 @@
 <template>
   <form
     action="submit"
-    @submit.prevent="updateProductFun"
+    @submit.prevent="uploadImage"
     class="min-w-[300px] max-w-[300px] min-h-[350px] bg-[#08090a] border py-4 px-12 border-red-500 rounded-lg"
   >
     <div class="flex flex-col -mx-3 mb-2">
@@ -25,15 +25,11 @@
           class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
           for="grid-last-name"
         >
-          Image URL
+          Select Image
         </label>
-        <input
-          class="appearance-none block w-full bg-transparent text-white border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-transparent focus:border-red-500"
-          v-model="img"
-          type="text"
-          placeholder=" Image URL or Directory"
-          required
-        />
+        <div>
+          <input type="file" @change="onFileChange" />
+        </div>
       </div>
     </div>
     <div class="flex -mx-3 mb-2">
@@ -128,6 +124,36 @@ const getCategoriesFun = async () => {
   }
 };
 getCategoriesFun();
+
+const file = ref(null);
+
+const onFileChange = (event) => {
+  file.value = event.target.files[0];
+};
+
+const uploadImage = async () => {
+  if (!file.value) return;
+
+  const formData = new FormData();
+  formData.append("image", file.value);
+
+  try {
+    const response = await fetch("/api/upload", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+    console.log(data);
+    img.value = data.fileUrl;
+    console.log(img.value, data.fileUrl);
+
+    updateProductFun();
+  } catch (error) {
+    alert("Error uploading image:");
+    console.error("Error uploading image:", error);
+  }
+};
 </script>
 
 <style lang="scss" scoped></style>
